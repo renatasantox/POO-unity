@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class Inimigo : Personagem
 {
+   public enum ArmaDoInimigo
+   {
+      ESPADA, MACHADO, ADAGA
+   }
+   [ SerializeField ]
    private string armadura;
+   [ SerializeField ]
    private string arma;
 
    public void AtribuirArmadura(string armadura)
@@ -34,12 +40,19 @@ public class Inimigo : Personagem
       switch (arma)
       {
          case "ESPADA":
-            dano = this.Forca_Ataque() + 10;
+            dano = AtribuirForca_Ataque() + 10;
+            break;
+         case "MACHADO":
+            dano = AtribuirForca_Ataque() + 18;
+            break;
+         case "ADAGA":
+            dano = AtribuirForca_Ataque() + 5;
+            break;
       }
       
       
       // dano do ataque com a armna
       
-      return = 0;-
+      return dano;
    }
 }
