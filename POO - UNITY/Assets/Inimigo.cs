@@ -8,27 +8,32 @@ public class Inimigo : Personagem
    {
       ESPADA, MACHADO, ADAGA
    }
+   public enum ArmaduraDoInimigo
+      {
+         MADEIRA, COURO, BRONZE, ACO
+      }   
+   
    [ SerializeField ]
-   private string armadura;
+   private ArmaduraDoInimigo armadura;
    [ SerializeField ]
-   private string arma;
+   private ArmaDoInimigo arma;
 
-   public void AtribuirArmadura(string armadura)
+   public void AtribuirArmadura(ArmaduraDoInimigo armadura)
    {
       this.armadura = armadura;
    }
    
-   public string Armadura()
+   public ArmaduraDoInimigo Armadura()
    {
       return this.armadura;
    }
    
-   public void AtribuirArma(string arma)
+   public void AtribuirArma( ArmaDoInimigo arma)
    {
       this.arma = arma;
    }
    
-   public string Arma()
+   public  ArmaDoInimigo Arma()
    {
       return this.arma;
    }
@@ -39,13 +44,13 @@ public class Inimigo : Personagem
 
       switch (arma)
       {
-         case "ESPADA":
+         case ArmaDoInimigo.ESPADA:
             dano = AtribuirForca_Ataque() + 10;
             break;
-         case "MACHADO":
+         case ArmaDoInimigo.MACHADO:
             dano = AtribuirForca_Ataque() + 18;
             break;
-         case "ADAGA":
+         case ArmaDoInimigo.ADAGA:
             dano = AtribuirForca_Ataque() + 5;
             break;
       }

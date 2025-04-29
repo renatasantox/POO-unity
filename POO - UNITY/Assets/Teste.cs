@@ -4,13 +4,11 @@ public class Teste : MonoBehaviour
 {
     Carro fusca = new Carro();
     Carro gol = new Carro();
-
     Caminhão caminhao = new Caminhão();
+    Personagem joao = new Personagem();
+    Inimigo ork = new Inimigo();
     
     //======================
-
-    private Personagem joao = new Personagem();
-    private Inimigo ork = new Inimigo();
 
     void Start()
     {
@@ -51,12 +49,10 @@ public class Teste : MonoBehaviour
             Debug.Log(" O Carro " + fusca.getNome() + " é mais barato do que o " + caminhao.getNome());
         }
         
-        
-        
         joao.AtribuirNome("João Roberto II");
         joao.AtribuirEnergia (10);
         joao.AtribuirForca_Ataque (12); 
-        joao.AtribuirForca_do_pulo (6);
+        joao.AtribuirForca_Do_pulo (6);
         joao.AtribuirVelocidade(8);
         joao.AtribuirNumero_de_pes (2);
         joao.AtribuitNumero_de_maos (2);
@@ -65,12 +61,12 @@ public class Teste : MonoBehaviour
         ork.AtribuirNome("Ork Gob");
         ork.AtribuirEnergia (23);
         ork.AtribuirForca_Ataque (15); 
-        ork.AtribuirForca_do_pulo (8);
+        ork.AtribuirForca_Do_pulo(8);
         ork.AtribuirVelocidade(6);
         ork.AtribuirNumero_de_pes(2);
         ork.AtribuitNumero_de_maos (4);
-        ork.AtribuirArma("MACHADO");
-        ork.AtribuirArmadura("COURO");
+        ork.AtribuirArma(Inimigo.ArmaDoInimigo.MACHADO);
+        ork.AtribuirArmadura(Inimigo.ArmaduraDoInimigo.COURO);
 
         if (ork.DanoDoInimigo() >= joao.Energia())
         {
@@ -78,7 +74,7 @@ public class Teste : MonoBehaviour
         }
         else
         {
-            Debug.Log("0 ");
+            Debug.Log("0" + joao.Nome() + " aonda tem " + joao.Energia() + " ficou sem energia");
         }
     }
 }

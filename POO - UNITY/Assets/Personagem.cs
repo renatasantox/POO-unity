@@ -9,9 +9,11 @@ public class Personagem : MonoBehaviour
     [ SerializeField ]
     private int forca_ataque;
     [ SerializeField ]
-    private float velocidasde;
+    private int forca_do_pulo;
     [ SerializeField ]
-    private int mumero_de_pes;
+    private float velocidade;
+    [ SerializeField ]
+    private int numero_de_pes;
     [ SerializeField ]
     private int numero_de_maos;
     
@@ -47,12 +49,12 @@ public class Personagem : MonoBehaviour
     
     public void AtribuirForca_Do_pulo(float pulo)
     {
-        this.Forca_do_pulo = pulo;
+        this.forca_do_pulo = forca_do_pulo;
     }
 
     public float NForca_Do_pulo()
     {
-        return this.Forca_do_pulo;
+        return this.forca_do_pulo;
     }
 
     public void AtribuirVelocidade(float velocidade)
@@ -67,12 +69,7 @@ public class Personagem : MonoBehaviour
 
     public void AtribuirNumero_de_pes(int numero_de_pes)
     {
-        this.Numero_de_pes = numero_de_pes;
-    }
-
-    public int Numero_de_pes()
-    {
-        return this.Numero_de_pes;
+        this.numero_de_pes = numero_de_pes;
     }
 
     public void AtribuitNumero_de_maos(int numero_de_maos)
