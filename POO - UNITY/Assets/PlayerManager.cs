@@ -1,15 +1,19 @@
-
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
     public Animator animator;
     private MovimentoPlayer movimentoPlayer;
     public float velocidadeDaAnimacao = 1;
-
+    
+    private Personagem personagem;
+    
+    
     void Start()
     {
         movimentoPlayer = GetComponent<MovimentoPlayer>();
+        personagem = GetComponent<Personagem>();
     }
     void Update()
     {
@@ -18,7 +22,13 @@ public class PlayerManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetTrigger("Ataque");
+            animator.SetTrigger("Ataque");  
         }
+
+        if (personagem.Energia() <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+        }
+
     }
 }
